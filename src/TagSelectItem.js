@@ -32,7 +32,8 @@ TagSelectItem.propTypes = {
   itemStyle: ViewPropTypes.style,
   itemStyleSelected: ViewPropTypes.style,
   itemLabelStyle: PropTypes.any,
-  itemLabelStyleSelected: PropTypes.any
+  itemLabelStyleSelected: PropTypes.any,
+  itemContainerStyle: ViewPropTypes.style
 }
 
 TagSelectItem.defaultProps = {
@@ -50,7 +51,7 @@ TagSelectItem.defaultProps = {
 
 function TagSelectItem (props) {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, ...props.itemContainerStyle}}>
       <TouchableOpacity
         onPress={props.onPress}
         activeOpacity={props.activeOpacity}
